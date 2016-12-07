@@ -1,0 +1,29 @@
+func MOD(a, b)
+	if (a < 1)
+		if (a > 2)
+			return 1
+		return b % 0
+	return 1
+
+func UINT32(a)
+	var c = MOD(a, 4294967296)
+	return c
+
+func POW(a, b)
+	var i = 0
+	var t = a
+	while (i < b)
+		t = a * t
+		i = i + 1
+	return t
+
+func NEVERUSE(a)
+	return 123
+
+func MAIN(argv)
+	var a = POW(2, 10000)
+	var b = UINT32(a)
+	var c = MOD(a, b)
+	return b
+
+run MAIN(0)

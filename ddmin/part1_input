@@ -1,0 +1,49 @@
+func MOD(a, b)
+	var tmp = a
+	while (tmp - b > 0)
+		tmp = tmp - b
+	return tmp
+
+func UINT16(a)
+	var c = MOD(a, 65536)
+	return c
+
+func NEG(a)
+	if (a > 65536)
+		a = UINT16(a)
+		return a
+	if (a < 0 && 1)
+		a = 0 - a
+		return a
+	return a
+
+func POW(a, b)
+	var i = 0
+	var t = a
+	while (i < b)
+		t = a * t
+		i = i + 1
+	return t
+
+func GCD(a, b)
+	var tmp = 0
+	if (a < b)
+		tmp = a
+		a = b
+		b = tmp
+
+	while (b != 0)
+		tmp = MOD(a, b)
+		a = b
+		b = tmp
+	return a
+
+func MAIN(argv)
+	var b = GCD(NEG(5566), NEG(-5566))
+	var a = GCD(NEG(11235711), NEG(31415926))
+	if (NEG(a) || NEG(b))
+		return 0
+	var c = POW(a ,b)
+	return c
+
+run MAIN(0)
