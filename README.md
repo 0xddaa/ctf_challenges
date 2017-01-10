@@ -6,3 +6,10 @@
 - 2048
 - ASMMon
 - ddmin
+
+### Edu-CTF 2017
+- AHK
+- orangr
+- tsubasa
+- caitlyn
+- printbf
