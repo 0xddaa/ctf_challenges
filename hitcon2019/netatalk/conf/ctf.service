@@ -1,0 +1,15 @@
+# install to /lib/systemd/system/ctf.service
+# systemctl [enable/disable/start/stop] ctf
+
+[Unit]
+Description=ctf pwn challenge
+After=docker.service
+
+[Service]
+ExecStart=/usr/bin/docker-compose -f /home/ubuntu/netatalk/docker-compose.yml up
+ExecStop=/usr/bin/docker-compose -f /home/ubuntu/netatalk/docker-compose.yml stop
+
+[Install]
+WantedBy=multi-user.target
+
+# vim: set ft=systemd:
